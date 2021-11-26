@@ -43,42 +43,42 @@ public class CreateModelGlobalAction{
     private HashMap<String, String> excelSheet;
     
       
-	private By MoveBoxTestingContext_Destination = By.xpath("");
-    private By MoveBoxTestingContext = By.id("I_000000");
-	private By AddBoxTestingContext_Destination = By.xpath("/html/body/div[1]/div/div/div[1]/div[1]/div[1]");
-    private By AddBoxTestingContext = By.xpath("//*[@id=\"/C/L/f\"]");
-	private By AddBoxTestCaseModel_Destination = By.xpath("/html/body/div[1]/div/div/div[1]/div[1]/div[1]");
-    private By AddBoxTestCaseModel = By.xpath("//*[@id=\"/C/L/c\"]");
-	private By AddFlow_Destination = By.xpath("/html/body/div[1]/div/div/div[1]/div[1]/div[2]/div[2]/div/div[4]");
-    private By AddFlow = By.xpath("/html/body/div[1]/div/div/div[1]/div[1]/div[2]/div[3]/div/div[5]");
+	private By GetInTestSuiteModel = By.id("I_000001");
 	private By CursorBoxStart = By.id("I_000001");
-	private By IsClickTestingContext = By.xpath("//*[@id=\"/C/L/f\"]");
-	private By TestingModule = By.xpath("//span[contains(@title,'everiscad.test.TestModel')]");
-	private By isClickExecuteContext = By.xpath("//*[@id=\"/C/L/jD\"]");
-	private By GetInTestingContext = By.id("I_000000");
 	private By AddBoxExecuteContext_Destination = By.xpath("/html/body/div[1]/div/div/div[1]/div[1]/div[1]");
     private By AddBoxExecuteContext = By.xpath("//*[@id=\"/C/L/jD\"]");
-	private By AddBoxFrontEndContext_Destination = By.xpath("/html/body/div[1]/div/div/div[1]/div[1]/div[1]");
-    private By AddBoxFrontEndContext = By.xpath("//*[@id=\"/C/L/WJ\"]");
-	private By SelectFrontEndContext = By.id("I_000001");
-	private By AddUri = By.id("I_000001");
-	private By ValueUri = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div/div/ul/li[4]/div/ul/li[5]/div/div[2]/input");
-	private By IsClickTestSuiteModel = By.xpath("//*[@id=\"/C/L/F\"]");
-	private By GoBack = By.xpath("//i[contains(text(),'arrow_upward')]");
-	private By AddBoxTestSuiteModel_Destination = By.xpath("/html/body/div[1]/div/div/div[1]/div[1]/div[1]");
-    private By AddBoxTestSuiteModel = By.xpath("//*[@id=\"/C/L/F\"]");
-	private By IsClickTestCaseModel = By.xpath("//*[@id=\"/C/L/c\"]");
-	private By GetInTestSuiteModel = By.id("I_000001");
-	private By IsClickGetInExecute = By.id("I_000002");
-	private By GetInTestCaseModel = By.id("I_000000");
-	private By IsClickFrontEndNavigate = By.xpath("//*[@id=\"/C/L/E\"]");
-	private By GetInExecute = By.id("I_000002");
-	private By AddBoxFrontEndNavigate_Destination = By.xpath("/html/body/div[1]/div/div/div[1]/div[1]/div[1]");
-    private By AddBoxFrontEndNavigate = By.xpath("//*[@id=\"/C/L/E\"]");
 	private By MoveBoxFrontEndNavigate_Destination = By.xpath("");
     private By MoveBoxFrontEndNavigate = By.id("I_000000");
+	private By GetInTestingContext = By.id("I_000000");
+	private By GoBack = By.xpath("//i[contains(text(),'arrow_upward')]");
+	private By GoBack1 = By.xpath("//i[contains(text(),'arrow_upward')]");
+	private By AddBoxTestCaseModel_Destination = By.xpath("/html/body/div[1]/div/div/div[1]/div[1]/div[1]");
+    private By AddBoxTestCaseModel = By.xpath("//*[@id=\"/C/L/c\"]");
+	private By AddBoxFrontEndContext_Destination = By.xpath("/html/body/div[1]/div/div/div[1]/div[1]/div[1]");
+    private By AddBoxFrontEndContext = By.xpath("//*[@id=\"/C/L/WJ\"]");
+	private By AsyncCondition6 = By.xpath("//span[contains(@title,'everiscad.test.TestModel')]");
+	private By TestingModule = By.xpath("//span[contains(@title,'everiscad.test.TestModel')]");
+	private By AddBoxTestingContext_Destination = By.xpath("/html/body/div[1]/div/div/div[1]/div[1]/div[1]");
+    private By AddBoxTestingContext = By.xpath("//*[@id=\"/C/L/f\"]");
+	private By MoveBoxTestingContext_Destination = By.xpath("");
+    private By MoveBoxTestingContext = By.id("I_000000");
+	private By AddUri = By.id("I_000001");
+	private By valueUri = By.xpath("/html/body/div[2]/div[2]/div[2]/div/div[1]/div/div/ul/li[4]/div/ul/li[5]/div/div[2]/input");
+	private By SelectFrontEndContext = By.id("I_000001");
+	private By GoBack2 = By.xpath("//i[contains(text(),'arrow_upward')]");
+	private By AddBoxTestSuiteModel_Destination = By.xpath("/html/body/div[1]/div/div/div[1]/div[1]/div[1]");
+    private By AddBoxTestSuiteModel = By.xpath("//*[@id=\"/C/L/F\"]");
+	private By MoveTestCaseModel_Destination = By.xpath("");
+    private By MoveTestCaseModel = By.id("I_000000");
+	private By GetInTestCaseModel = By.id("I_000000");
+	private By AddBoxFrontEndNavigate_Destination = By.xpath("/html/body/div[1]/div/div/div[1]/div[1]/div[1]");
+    private By AddBoxFrontEndNavigate = By.xpath("//*[@id=\"/C/L/E\"]");
+	private By AddFlow_Destination = By.xpath("/html/body/div[1]/div/div/div[1]/div[1]/div[2]/div[2]/div/div[4]");
+    private By AddFlow = By.xpath("/html/body/div[1]/div/div/div[1]/div[1]/div[2]/div[3]/div/div[5]");
 	private By AddBoxStart_Destination = By.xpath("/html/body/div[1]/div/div/div[1]/div[1]/div[1]");
     private By AddBoxStart = By.xpath("//*[@id=\"/C/L/g\"]");
+	private By GoBack3 = By.xpath("//i[contains(text(),'arrow_upward')]");
+	private By GetInExecute = By.id("I_000002");
     
     public CreateModelGlobalAction(Class reflectiveClass) throws Exception {
         this.reflectiveClass = reflectiveClass;
@@ -100,9 +100,9 @@ public class CreateModelGlobalAction{
         this.excelSheet = (HashMap) reflectiveClass.getField("excelSheet").get(reflectiveClass);
     }
 
-    public CreateModelGlobalAction IsClickTestingContext() {
-        	new WebDriverWait(driver, 60).until(ExpectedConditions.elementToBeClickable(IsClickTestingContext));
-            Report.reportLog(reflectiveClass, "Condition IsClickTestingContext isClickable finished", "INFO", 60, Status.PASS, true, "", "", null);
+    public CreateModelGlobalAction AsyncCondition6() {
+        	new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(AsyncCondition6));
+            Report.reportLog(reflectiveClass, "Condition AsyncCondition6 isClickable finished", "INFO", 40, Status.PASS, true, "", "", null);
         	return this;
     }
 
@@ -114,27 +114,21 @@ public class CreateModelGlobalAction{
             Report.reportLog(reflectiveClass, "Condition TestingModule isClickable finished", "ASYNCHRONOUS", 0);
             Actions action = new Actions(driver);
             action.doubleClick(driver.findElement(TestingModule)).perform();
-            Report.reportLog(reflectiveClass, "Double clicked TestingModule", "INFO", 1000, Status.PASS, true, "", "", null);
+            Report.reportLog(reflectiveClass, "Double clicked TestingModule", "INFO", 0, Status.PASS, true, "", "", null);
             return this;
       }
       public CreateModelGlobalAction AddBoxTestingContext() {
         Actions action = new Actions(driver);
         action.dragAndDrop(driver.findElement(AddBoxTestingContext), driver.findElement(AddBoxTestingContext_Destination)).release().build().perform();
-        Report.reportLog(reflectiveClass, "AddBoxTestingContext action completed", "INFO", 1000, Status.PASS, true, "", "", null);
+        Report.reportLog(reflectiveClass, "AddBoxTestingContext action completed", "INFO", 0, Status.PASS, true, "", "", null);
         return this;
     }
 
 	public CreateModelGlobalAction MoveBoxTestingContext() {
         Actions action = new Actions(driver);
         action.dragAndDropBy(driver.findElement(MoveBoxTestingContext), 200, 0).release().build().perform();
-        Report.reportLog(reflectiveClass, "MoveBoxTestingContext action completed", "INFO", 1000, Status.PASS, true, "", "", null);
+        Report.reportLog(reflectiveClass, "MoveBoxTestingContext action completed", "INFO", 0, Status.PASS, true, "", "", null);
         return this;
-    }
-
-	public CreateModelGlobalAction isClickExecuteContext() {
-        	new WebDriverWait(driver, 60).until(ExpectedConditions.elementToBeClickable(isClickExecuteContext));
-            Report.reportLog(reflectiveClass, "Condition isClickExecuteContext isClickable finished", "INFO", 60, Status.PASS, true, "", "", null);
-        	return this;
     }
 
 	
@@ -145,20 +139,20 @@ public class CreateModelGlobalAction{
             Report.reportLog(reflectiveClass, "Condition GetInTestingContext isClickable finished", "ASYNCHRONOUS", 0);
             Actions action = new Actions(driver);
             action.doubleClick(driver.findElement(GetInTestingContext)).perform();
-            Report.reportLog(reflectiveClass, "Double clicked GetInTestingContext", "INFO", 1000, Status.PASS, true, "", "", null);
+            Report.reportLog(reflectiveClass, "Double clicked GetInTestingContext", "INFO", 5000, Status.PASS, true, "", "", null);
             return this;
       }
       public CreateModelGlobalAction AddBoxExecuteContext() {
         Actions action = new Actions(driver);
         action.dragAndDrop(driver.findElement(AddBoxExecuteContext), driver.findElement(AddBoxExecuteContext_Destination)).release().build().perform();
-        Report.reportLog(reflectiveClass, "AddBoxExecuteContext action completed", "INFO", 1000, Status.PASS, true, "", "", null);
+        Report.reportLog(reflectiveClass, "AddBoxExecuteContext action completed", "INFO", 0, Status.PASS, true, "", "", null);
         return this;
     }
 
 	public CreateModelGlobalAction AddBoxFrontEndContext() {
         Actions action = new Actions(driver);
         action.dragAndDrop(driver.findElement(AddBoxFrontEndContext), driver.findElement(AddBoxFrontEndContext_Destination)).release().build().perform();
-        Report.reportLog(reflectiveClass, "AddBoxFrontEndContext action completed", "INFO", 1000, Status.PASS, true, "", "", null);
+        Report.reportLog(reflectiveClass, "AddBoxFrontEndContext action completed", "INFO", 0, Status.PASS, true, "", "", null);
         return this;
     }
 
@@ -169,48 +163,36 @@ public class CreateModelGlobalAction{
             new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(SelectFrontEndContext));
             Report.reportLog(reflectiveClass, "Condition SelectFrontEndContext isClickable finished", "ASYNCHRONOUS", 0);
             driver.findElement(SelectFrontEndContext).click();
-            Report.reportLog(reflectiveClass, "Clicked SelectFrontEndContext", "INFO", 1000, Status.PASS, true, "", "", null);
+            Report.reportLog(reflectiveClass, "Clicked SelectFrontEndContext", "INFO", 0, Status.PASS, true, "", "", null);
             return this;
       }
       
       
 	public CreateModelGlobalAction AddUri() throws Exception {
-        	driver.findElement(ValueUri).clear();
-            driver.findElement(ValueUri).sendKeys("https://cad-alfa-thecide.caddev.everis.com/profile/login?redirect=%2F");
-            Report.reportLog(reflectiveClass, "Typed " + "https://cad-alfa-thecide.caddev.everis.com/profile/login?redirect=%2F in ValueUri", "INFO", 0, Status.PASS, true, "", "", null);
+        	driver.findElement(valueUri).clear();
+            driver.findElement(valueUri).sendKeys("https://cad-alfa-thecide.caddev.everis.com/profile/login?redirect=%2F");
+            Report.reportLog(reflectiveClass, "Typed " + "https://cad-alfa-thecide.caddev.everis.com/profile/login?redirect=%2F in valueUri", "INFO", 0, Status.PASS, true, "", "", null);
             new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(AddUri));
             Report.reportLog(reflectiveClass, "Condition AddUri isClickable finished", "ASYNCHRONOUS", 0);
             driver.findElement(AddUri).click();
-            Report.reportLog(reflectiveClass, "Clicked AddUri", "INFO", 1000, Status.PASS, true, "", "", null);
+            Report.reportLog(reflectiveClass, "Clicked AddUri", "INFO", 0, Status.PASS, true, "", "", null);
             return this;
       }
-      public CreateModelGlobalAction IsClickTestSuiteModel() {
-        	new WebDriverWait(driver, 60).until(ExpectedConditions.elementToBeClickable(IsClickTestSuiteModel));
-            Report.reportLog(reflectiveClass, "Condition IsClickTestSuiteModel isClickable finished", "INFO", 60, Status.PASS, true, "", "", null);
-        	return this;
-    }
-
-	
       
-	public CreateModelGlobalAction GoBack() throws Exception {
+      
+	public CreateModelGlobalAction GoBack2() throws Exception {
         
-            new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(GoBack));
-            Report.reportLog(reflectiveClass, "Condition GoBack isClickable finished", "ASYNCHRONOUS", 0);
-            driver.findElement(GoBack).click();
-            Report.reportLog(reflectiveClass, "Clicked GoBack", "INFO", 1000, Status.PASS, true, "", "", null);
+            new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(GoBack2));
+            Report.reportLog(reflectiveClass, "Condition GoBack2 isClickable finished", "ASYNCHRONOUS", 0);
+            driver.findElement(GoBack2).click();
+            Report.reportLog(reflectiveClass, "Clicked GoBack2", "INFO", 0, Status.PASS, true, "", "", null);
             return this;
       }
       public CreateModelGlobalAction AddBoxTestSuiteModel() {
         Actions action = new Actions(driver);
         action.dragAndDrop(driver.findElement(AddBoxTestSuiteModel), driver.findElement(AddBoxTestSuiteModel_Destination)).release().build().perform();
-        Report.reportLog(reflectiveClass, "AddBoxTestSuiteModel action completed", "INFO", 1000, Status.PASS, true, "", "", null);
+        Report.reportLog(reflectiveClass, "AddBoxTestSuiteModel action completed", "INFO", 0, Status.PASS, true, "", "", null);
         return this;
-    }
-
-	public CreateModelGlobalAction IsClickTestCaseModel() {
-        	new WebDriverWait(driver, 60).until(ExpectedConditions.elementToBeClickable(IsClickTestCaseModel));
-            Report.reportLog(reflectiveClass, "Condition IsClickTestCaseModel isClickable finished", "INFO", 60, Status.PASS, true, "", "", null);
-        	return this;
     }
 
 	
@@ -221,20 +203,21 @@ public class CreateModelGlobalAction{
             Report.reportLog(reflectiveClass, "Condition GetInTestSuiteModel isClickable finished", "ASYNCHRONOUS", 0);
             Actions action = new Actions(driver);
             action.doubleClick(driver.findElement(GetInTestSuiteModel)).perform();
-            Report.reportLog(reflectiveClass, "Double clicked GetInTestSuiteModel", "INFO", 1000, Status.PASS, true, "", "", null);
+            Report.reportLog(reflectiveClass, "Double clicked GetInTestSuiteModel", "INFO", 2000, Status.PASS, true, "", "", null);
             return this;
       }
       public CreateModelGlobalAction AddBoxTestCaseModel() {
         Actions action = new Actions(driver);
         action.dragAndDrop(driver.findElement(AddBoxTestCaseModel), driver.findElement(AddBoxTestCaseModel_Destination)).release().build().perform();
-        Report.reportLog(reflectiveClass, "AddBoxTestCaseModel action completed", "INFO", 1000, Status.PASS, true, "", "", null);
+        Report.reportLog(reflectiveClass, "AddBoxTestCaseModel action completed", "INFO", 2000, Status.PASS, true, "", "", null);
         return this;
     }
 
-	public CreateModelGlobalAction IsClickGetInExecute() {
-        	new WebDriverWait(driver, 60).until(ExpectedConditions.elementToBeClickable(IsClickGetInExecute));
-            Report.reportLog(reflectiveClass, "Condition IsClickGetInExecute isClickable finished", "INFO", 60, Status.PASS, true, "", "", null);
-        	return this;
+	public CreateModelGlobalAction MoveTestCaseModel() {
+        Actions action = new Actions(driver);
+        action.dragAndDropBy(driver.findElement(MoveTestCaseModel), 0, 170).release().build().perform();
+        Report.reportLog(reflectiveClass, "MoveTestCaseModel action completed", "INFO", 0, Status.PASS, true, "", "", null);
+        return this;
     }
 
 	
@@ -245,16 +228,10 @@ public class CreateModelGlobalAction{
             Report.reportLog(reflectiveClass, "Condition GetInTestCaseModel isClickable finished", "ASYNCHRONOUS", 0);
             Actions action = new Actions(driver);
             action.doubleClick(driver.findElement(GetInTestCaseModel)).perform();
-            Report.reportLog(reflectiveClass, "Double clicked GetInTestCaseModel", "INFO", 1000, Status.PASS, true, "", "", null);
+            Report.reportLog(reflectiveClass, "Double clicked GetInTestCaseModel", "INFO", 0, Status.PASS, true, "", "", null);
             return this;
       }
-      public CreateModelGlobalAction IsClickFrontEndNavigate() {
-        	new WebDriverWait(driver, 60).until(ExpectedConditions.elementToBeClickable(IsClickFrontEndNavigate));
-            Report.reportLog(reflectiveClass, "Condition IsClickFrontEndNavigate isClickable finished", "INFO", 60, Status.PASS, true, "", "", null);
-        	return this;
-    }
-
-	
+      
       
 	public CreateModelGlobalAction GetInExecute() throws Exception {
         
@@ -299,71 +276,80 @@ public class CreateModelGlobalAction{
       public CreateModelGlobalAction AddFlow() {
         Actions action = new Actions(driver);
         action.dragAndDrop(driver.findElement(AddFlow), driver.findElement(AddFlow_Destination)).release().build().perform();
-        Report.reportLog(reflectiveClass, "AddFlow action completed", "INFO", 0, Status.PASS, true, "", "", null);
+        Report.reportLog(reflectiveClass, "AddFlow action completed", "INFO", 1000, Status.PASS, true, "", "", null);
         return this;
     }
 
 	
+      
+	public CreateModelGlobalAction GoBack3() throws Exception {
+        
+            new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(GoBack3));
+            Report.reportLog(reflectiveClass, "Condition GoBack3 isClickable finished", "ASYNCHRONOUS", 0);
+            driver.findElement(GoBack3).click();
+            Report.reportLog(reflectiveClass, "Clicked GoBack3", "INFO", 0, Status.PASS, true, "", "", null);
+            return this;
+      }
+      
+      
+	public CreateModelGlobalAction GoBack1() throws Exception {
+        
+            new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(GoBack1));
+            Report.reportLog(reflectiveClass, "Condition GoBack1 isClickable finished", "ASYNCHRONOUS", 0);
+            driver.findElement(GoBack1).click();
+            Report.reportLog(reflectiveClass, "Clicked GoBack1", "INFO", 0, Status.PASS, true, "", "", null);
+            return this;
+      }
+      
+      
+	public CreateModelGlobalAction GoBack() throws Exception {
+        
+            new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(GoBack));
+            Report.reportLog(reflectiveClass, "Condition GoBack isClickable finished", "ASYNCHRONOUS", 0);
+            driver.findElement(GoBack).click();
+            Report.reportLog(reflectiveClass, "Clicked GoBack", "INFO", 0, Status.PASS, true, "", "", null);
+            return this;
+      }
+      
     public void doCreateModelGlobalAction() throws Exception {
     
+    
+		AsyncCondition6();
+      
+		TestingModule();
+    
+		AddBoxTestingContext();
+    
+		MoveBoxTestingContext();
+    
+		GetInTestingContext();
     	Thread.sleep(5000);
 
-        Report.reportLog(reflectiveClass, "", "INFO", 5000);
-
-		TestingModule();
-    	Thread.sleep(1000);
-
-		IsClickTestingContext();
-      
-		AddBoxTestingContext();
-    	Thread.sleep(1000);
-
-		MoveBoxTestingContext();
-    	Thread.sleep(1000);
-
-		GetInTestingContext();
-    	Thread.sleep(1000);
-
-		isClickExecuteContext();
-      
 		AddBoxExecuteContext();
-    	Thread.sleep(1000);
-
+    
 		AddBoxFrontEndContext();
-    	Thread.sleep(1000);
-
+    
 		SelectFrontEndContext();
-    	Thread.sleep(1000);
-
+    
 		AddUri();
-    	Thread.sleep(1000);
-
-		GoBack();
-    	Thread.sleep(1000);
-
-		IsClickTestSuiteModel();
-      
+    
+		GoBack2();
+    
 		AddBoxTestSuiteModel();
-    	Thread.sleep(1000);
-
+    
 		GetInTestSuiteModel();
-    	Thread.sleep(1000);
+    	Thread.sleep(2000);
 
-		IsClickTestCaseModel();
-      
 		AddBoxTestCaseModel();
-    	Thread.sleep(1000);
+    	Thread.sleep(2000);
 
+		MoveTestCaseModel();
+    
 		GetInTestCaseModel();
-    	Thread.sleep(1000);
-
-		IsClickGetInExecute();
-      
+    
 		GetInExecute();
     	Thread.sleep(1000);
 
-		IsClickFrontEndNavigate();
-      
 		AddBoxFrontEndNavigate();
     	Thread.sleep(1000);
 
@@ -377,6 +363,13 @@ public class CreateModelGlobalAction{
     	Thread.sleep(1000);
 
 		AddFlow();
+    	Thread.sleep(1000);
+
+		GoBack3();
+    
+		GoBack1();
+    
+		GoBack();
     
 		
     }

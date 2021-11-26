@@ -26,6 +26,10 @@ public class post {
             + separator + "request" + separator + "post2.json";
 	private static String post3 = System.getProperty("user.dir") + separator + "resources"
             + separator + "request" + separator + "post3.json";
+	private static String post4 = System.getProperty("user.dir") + separator + "resources"
+            + separator + "request" + separator + "post4.json";
+	private static String post5 = System.getProperty("user.dir") + separator + "resources"
+            + separator + "request" + separator + "post5.json";
 	
     
     public Response postPOST() throws Exception {
@@ -76,6 +80,36 @@ public Response postPOST2() throws Exception {
 public Response postPOST3() throws Exception {
         try{
 			jsonBody = Utils.generateJSONBody(post3); 
+            Response response = given()
+                .contentType(contentType)
+				.header("Accept-Charset", "UTF-8")
+				.body(jsonBody)
+                .when()
+                .post(URL);
+            return response;
+        } catch (Exception e) {
+            String message = e.getMessage() != null ? e.getMessage() : "Found a bad request error to this url: " + URL;
+            throw new Exception (message);
+        }
+    }
+public Response postPOST4() throws Exception {
+        try{
+			jsonBody = Utils.generateJSONBody(post4); 
+            Response response = given()
+                .contentType(contentType)
+				.header("Accept-Charset", "UTF-8")
+				.body(jsonBody)
+                .when()
+                .post(URL);
+            return response;
+        } catch (Exception e) {
+            String message = e.getMessage() != null ? e.getMessage() : "Found a bad request error to this url: " + URL;
+            throw new Exception (message);
+        }
+    }
+public Response postPOST5() throws Exception {
+        try{
+			jsonBody = Utils.generateJSONBody(post5); 
             Response response = given()
                 .contentType(contentType)
 				.header("Accept-Charset", "UTF-8")

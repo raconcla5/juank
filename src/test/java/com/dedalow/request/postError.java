@@ -26,6 +26,10 @@ public class postError {
             + separator + "request" + separator + "postError2.json";
 	private static String postError3 = System.getProperty("user.dir") + separator + "resources"
             + separator + "request" + separator + "postError3.json";
+	private static String postError4 = System.getProperty("user.dir") + separator + "resources"
+            + separator + "request" + separator + "postError4.json";
+	private static String postError5 = System.getProperty("user.dir") + separator + "resources"
+            + separator + "request" + separator + "postError5.json";
 	
     
     public Response postErrorPOST() throws Exception {
@@ -77,6 +81,36 @@ public Response postErrorPOST3() throws Exception {
         try{
 			String queryParam = "/api/users";
 			jsonBody = Utils.generateJSONBody(postError3); 
+            Response response = given()
+                .contentType(contentType)
+				.body(jsonBody)
+                .when()
+                .post(URL + queryParam);
+            return response;
+        } catch (Exception e) {
+            String message = e.getMessage() != null ? e.getMessage() : "Found a bad request error to this url: " + URL;
+            throw new Exception (message);
+        }
+    }
+public Response postErrorPOST4() throws Exception {
+        try{
+			String queryParam = "/api/users";
+			jsonBody = Utils.generateJSONBody(postError4); 
+            Response response = given()
+                .contentType(contentType)
+				.body(jsonBody)
+                .when()
+                .post(URL + queryParam);
+            return response;
+        } catch (Exception e) {
+            String message = e.getMessage() != null ? e.getMessage() : "Found a bad request error to this url: " + URL;
+            throw new Exception (message);
+        }
+    }
+public Response postErrorPOST5() throws Exception {
+        try{
+			String queryParam = "/api/users";
+			jsonBody = Utils.generateJSONBody(postError5); 
             Response response = given()
                 .contentType(contentType)
 				.body(jsonBody)

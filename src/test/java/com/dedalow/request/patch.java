@@ -26,6 +26,10 @@ public class patch {
             + separator + "request" + separator + "patch2.json";
 	private static String patch3 = System.getProperty("user.dir") + separator + "resources"
             + separator + "request" + separator + "patch3.json";
+	private static String patch4 = System.getProperty("user.dir") + separator + "resources"
+            + separator + "request" + separator + "patch4.json";
+	private static String patch5 = System.getProperty("user.dir") + separator + "resources"
+            + separator + "request" + separator + "patch5.json";
 	
     
     public Response patchPATCH() throws Exception {
@@ -80,6 +84,38 @@ public Response patchPATCH3() throws Exception {
         try{
 			String queryParam = "users/2";
 			jsonBody = Utils.generateJSONBody(patch3); 
+            Response response = given()
+                .contentType(contentType)
+				.header("Accept-Charset", "UTF-8")
+				.body(jsonBody)
+                .when()
+                .patch(URL + queryParam);
+            return response;
+        } catch (Exception e) {
+            String message = e.getMessage() != null ? e.getMessage() : "Found a bad request error to this url: " + URL;
+            throw new Exception (message);
+        }
+    }
+public Response patchPATCH4() throws Exception {
+        try{
+			String queryParam = "users/2";
+			jsonBody = Utils.generateJSONBody(patch4); 
+            Response response = given()
+                .contentType(contentType)
+				.header("Accept-Charset", "UTF-8")
+				.body(jsonBody)
+                .when()
+                .patch(URL + queryParam);
+            return response;
+        } catch (Exception e) {
+            String message = e.getMessage() != null ? e.getMessage() : "Found a bad request error to this url: " + URL;
+            throw new Exception (message);
+        }
+    }
+public Response patchPATCH5() throws Exception {
+        try{
+			String queryParam = "users/2";
+			jsonBody = Utils.generateJSONBody(patch5); 
             Response response = given()
                 .contentType(contentType)
 				.header("Accept-Charset", "UTF-8")

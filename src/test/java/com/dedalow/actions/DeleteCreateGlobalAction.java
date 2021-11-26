@@ -3,6 +3,7 @@ package com.dedalow.actions;
 import com.dedalow.utils.Utils;
 import com.dedalow.utils.Constant;
 import com.dedalow.report.Report;
+import com.dedalow.customActions.DeleteProyect;
 import io.restassured.response.Response;
 import java.io.File;
 import java.io.FileInputStream;
@@ -42,23 +43,18 @@ public class DeleteCreateGlobalAction{
     private String finalResult;
     private HashMap<String, String> excelSheet;
     
+	private static DeleteProyect deleteProyect;
       
-	private By DeleteProjectOK = By.id("cadgitlab+createglobal");
-	private By IsClickDeleteProject = By.id("cadgitlab+createglobal");
-	private By DeleteProject = By.xpath("//button[contains(text(),'Delete Project ...')]");
-	private By IsClickMenuProyects = By.xpath("//span[contains(text(),'Projects')]");
-	private By MenuProyects = By.xpath("//span[contains(text(),'Projects')]");
 	private By GoToProfile = By.xpath("/html/body/div/div/header/nav/div/ul/li[3]/a");
+	private By MenuProyects = By.xpath("/html/body/div/div/aside/section/ul/li[4]/a");
 	private By SignOut = By.xpath("//button[contains(text(),'Sign Out')]");
-	private By IsClickDeleteProject1 = By.xpath("//button[contains(text(),'Delete Project ...')]");
-	private By SelectCreateGlobal = By.xpath("//span[contains(text(),'createglobal')]");
-	private By NameProject = By.xpath("//body/div[@id='dedalow-profile']/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/label[1]/input[1]");
     
     public DeleteCreateGlobalAction(Class reflectiveClass) throws Exception {
         this.reflectiveClass = reflectiveClass;
         getPrepareAction();
         PageFactory.initElements(driver, this);
         js = (JavascriptExecutor)driver;
+		deleteProyect = new DeleteProyect(driver);
     }
 
     public void getPrepareAction() throws Exception {
@@ -74,13 +70,7 @@ public class DeleteCreateGlobalAction{
         this.excelSheet = (HashMap) reflectiveClass.getField("excelSheet").get(reflectiveClass);
     }
 
-    public DeleteCreateGlobalAction IsClickMenuProyects() {
-        	new WebDriverWait(driver, 60).until(ExpectedConditions.elementToBeClickable(IsClickMenuProyects));
-            Report.reportLog(reflectiveClass, "Condition IsClickMenuProyects isClickable finished", "INFO", 60, Status.PASS, true, "", "", null);
-        	return this;
-    }
-
-	public DeleteCreateGlobalAction IndexProfile () {
+    public DeleteCreateGlobalAction IndexProfile () {
         driver.get(prop.getProperty("WEB_URL") + "/profile/home");
         Report.reportLog(reflectiveClass, "IndexProfile action completed", "INFO", 1000, Status.PASS, true, "", "", null);
         return this;
@@ -96,51 +86,13 @@ public class DeleteCreateGlobalAction{
             Report.reportLog(reflectiveClass, "Clicked MenuProyects", "INFO", 1000, Status.PASS, true, "", "", null);
             return this;
       }
-      public DeleteCreateGlobalAction IsClickDeleteProject1() {
-        	new WebDriverWait(driver, 60).until(ExpectedConditions.elementToBeClickable(IsClickDeleteProject1));
-            Report.reportLog(reflectiveClass, "Condition IsClickDeleteProject1 isClickable finished", "INFO", 60, Status.PASS, true, "", "", null);
-        	return this;
-    }
+      public DeleteCreateGlobalAction DeleteProyect() throws Exception {
+          deleteProyect.doDeleteProyect(reflectiveClass);
+          Report.reportLog(reflectiveClass, "DeleteProyect action completed", "INFO", 1000, Status.PASS, false, "", "", null);
+          return this;
+        }
 
-	
-      
-	public DeleteCreateGlobalAction SelectCreateGlobal() throws Exception {
-        	driver.findElement(NameProject).clear();
-            driver.findElement(NameProject).sendKeys("createglobal");
-            Report.reportLog(reflectiveClass, "Typed " + "createglobal in NameProject", "INFO", 0, Status.PASS, true, "", "", null);
-            new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(SelectCreateGlobal));
-            Report.reportLog(reflectiveClass, "Condition SelectCreateGlobal isClickable finished", "ASYNCHRONOUS", 0);
-            driver.findElement(SelectCreateGlobal).click();
-            Report.reportLog(reflectiveClass, "Clicked SelectCreateGlobal", "INFO", 1000, Status.PASS, true, "", "", null);
-            return this;
-      }
-      public DeleteCreateGlobalAction IsClickDeleteProject() {
-        	new WebDriverWait(driver, 60).until(ExpectedConditions.elementToBeClickable(IsClickDeleteProject));
-            Report.reportLog(reflectiveClass, "Condition IsClickDeleteProject isClickable finished", "INFO", 60, Status.PASS, true, "", "", null);
-        	return this;
-    }
-
-	
-      
-	public DeleteCreateGlobalAction DeleteProject() throws Exception {
         
-            new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(DeleteProject));
-            Report.reportLog(reflectiveClass, "Condition DeleteProject isClickable finished", "ASYNCHRONOUS", 0);
-            driver.findElement(DeleteProject).click();
-            Report.reportLog(reflectiveClass, "Clicked DeleteProject", "INFO", 1000, Status.PASS, true, "", "", null);
-            return this;
-      }
-      
-      
-	public DeleteCreateGlobalAction DeleteProjectOK() throws Exception {
-        
-            new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(DeleteProjectOK));
-            Report.reportLog(reflectiveClass, "Condition DeleteProjectOK isClickable finished", "ASYNCHRONOUS", 0);
-            driver.findElement(DeleteProjectOK).click();
-            Report.reportLog(reflectiveClass, "Clicked DeleteProjectOK", "INFO", 5000, Status.PASS, true, "", "", null);
-            return this;
-      }
-      
       
 	public DeleteCreateGlobalAction GoToProfile() throws Exception {
         
@@ -167,23 +119,11 @@ public class DeleteCreateGlobalAction{
 		IndexProfile();
     	Thread.sleep(1000);
 
-		IsClickMenuProyects();
-      
 		MenuProyects();
     	Thread.sleep(1000);
 
-		SelectCreateGlobal();
+		DeleteProyect();
     	Thread.sleep(1000);
-
-		IsClickDeleteProject1();
-      
-		DeleteProject();
-    	Thread.sleep(1000);
-
-		IsClickDeleteProject();
-      
-		DeleteProjectOK();
-    	Thread.sleep(5000);
 
 		GoToProfile();
     	Thread.sleep(1000);

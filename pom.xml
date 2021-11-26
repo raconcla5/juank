@@ -7,12 +7,12 @@
 	
 	<modelVersion>4.0.0</modelVersion>
     <groupId>java.com.dedalow</groupId>
-    <artifactId>cucumberact</artifactId>
+    <artifactId>supertestjunit</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 	
 	<developers>
 		<developer>
-			<name>rcontrcl</name>
+			<name>jruizori</name>
 			<roles></roles>
 		</developer>
 	</developers>
@@ -28,12 +28,12 @@
 		<junit5.version>5.4.0</junit5.version>
 		<rest-assured.version>3.0.7</rest-assured.version>
 		<extentreports.version>3.1.2</extentreports.version>
-		
+		<testlink.version>1.9.19-0</testlink.version>
 	</properties>
 	
 	<!-- Build and plugins -->
 	<build>
-		<finalName>cucumberactExe</finalName>
+		<finalName>supertestjunitExe</finalName>
 		<sourceDirectory>src/test/java</sourceDirectory>
 		<plugins>
 			<!-- Compile the project -->
@@ -298,7 +298,13 @@
 		    <version>1.2.17</version>
 		</dependency>
 		
-		
+		<!-- TESTLINK REPORT -->
+			<!-- https://mvnrepository.com/artifact/br.eti.kinoshita/testlink-java-api -->
+			<dependency>
+				<groupId>br.eti.kinoshita</groupId>
+				<artifactId>testlink-java-api</artifactId>
+				<version>${testlink.version}</version>
+			</dependency>
 		
 		<!-- EXTENT REPORTS -->
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->

@@ -43,7 +43,7 @@ public class GoToAppGlobalAction{
     private HashMap<String, String> excelSheet;
     
       
-	private static By checkTitle7 = By.xpath("//h2");
+	private static By checkTitle = By.xpath("//h2");
     
     public GoToAppGlobalAction(Class reflectiveClass) throws Exception {
         this.reflectiveClass = reflectiveClass;
@@ -65,33 +65,33 @@ public class GoToAppGlobalAction{
         this.excelSheet = (HashMap) reflectiveClass.getField("excelSheet").get(reflectiveClass);
     }
 
-    public GoToAppGlobalAction goToApp7 () {
+    public GoToAppGlobalAction goToApp1 () {
         driver.get("https://cad-uat-cadqa-supertestui.caddev.everis.com/");
-        Report.reportLog(reflectiveClass, "goToApp7 action completed", "INFO", 0, Status.PASS, true, "", "", null);
+        Report.reportLog(reflectiveClass, "goToApp1 action completed", "INFO", 0, Status.PASS, true, "", "", null);
         return this;
     }
 
 	
-	public GoToAppGlobalAction checkPage7() {
+	public GoToAppGlobalAction checkPage() {
         
-			assertTrue(driver.getCurrentUrl().equals("https://cad-uat-cadqa-supertestui.caddev.everis.com/"), "Field checkPage7 not found in assertion");
+			assertTrue(driver.getCurrentUrl().equals("https://cad-uat-cadqa-supertestui.caddev.everis.com/"), "Field checkPage not found in assertion");
         	Report.reportLog(reflectiveClass, "The field https://cad-uat-cadqa-supertestui.caddev.everis.com/ has been found on assertion", "INFO", 0, Status.PASS, true, "", "", null);
-            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(checkTitle7));
-            Report.reportLog(reflectiveClass, "Condition checkTitle7 isVisible finished", "ASYNCHRONOUS", 0);
-			assertTrue(driver.findElement(checkTitle7).getText().contains("formPage"), "Field checkTitle7 not found in assertion");
+            new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(checkTitle));
+            Report.reportLog(reflectiveClass, "Condition checkTitle isVisible finished", "ASYNCHRONOUS", 0);
+			assertTrue("formPage".equals(driver.findElement(checkTitle).getText()), "Field checkTitle not found in assertion");
         	Report.reportLog(reflectiveClass, "The field formPage has been found on assertion", "INFO", 0, Status.PASS, true, "", "", null);
             
         
-        Report.reportLog(reflectiveClass, "The field checkPage7 has been found on assertions", "INFO", 0, Status.PASS, false, "", "", null);
+        Report.reportLog(reflectiveClass, "The field checkPage has been found on assertions", "INFO", 0, Status.PASS, false, "", "", null);
         return this;
     }
     
     public void doGoToAppGlobalAction() throws Exception {
     
     
-		goToApp7();
+		goToApp1();
     
-		checkPage7();
+		checkPage();
     
 		
     }

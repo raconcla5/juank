@@ -43,12 +43,11 @@ public class LoginGlobalAction{
     private HashMap<String, String> excelSheet;
     
       
-	private By IsClickSingIn = By.id("login");
-	private By VisibleNameProfile = By.xpath("//strong[contains(text(),'cadgitlab')]");
+	private By AsyncCondition5 = By.xpath("/html/body/div[4]/div/nav/div/div[2]/div[3]/ul/li/a/strong");
 	private By SingIn = By.id("login");
 	private By UserName = By.id("id_username");
 	private By Password = By.xpath("//input[@id='id_password']");
-	private static By Nameprofile = By.xpath("//strong[contains(text(),'cadgitlab')]");
+	private static By checkNameProfile = By.xpath("/html/body/div[4]/div/nav/div/div[2]/div[3]/ul/li/a/strong");
     
     public LoginGlobalAction(Class reflectiveClass) throws Exception {
         this.reflectiveClass = reflectiveClass;
@@ -70,21 +69,15 @@ public class LoginGlobalAction{
         this.excelSheet = (HashMap) reflectiveClass.getField("excelSheet").get(reflectiveClass);
     }
 
-    public LoginGlobalAction IsClickSingIn() {
-        	new WebDriverWait(driver, 60).until(ExpectedConditions.elementToBeClickable(IsClickSingIn));
-            Report.reportLog(reflectiveClass, "Condition IsClickSingIn isClickable finished", "INFO", 60, Status.PASS, true, "", "", null);
-        	return this;
-    }
-
-	public LoginGlobalAction IndexCAD () {
+    public LoginGlobalAction FrontEndNavigate () {
         driver.get(prop.getProperty("WEB_URL") + "");
-        Report.reportLog(reflectiveClass, "IndexCAD action completed", "INFO", 1000, Status.PASS, true, "", "", null);
+        Report.reportLog(reflectiveClass, "FrontEndNavigate action completed", "INFO", 0, Status.PASS, true, "", "", null);
         return this;
     }
 
-	public LoginGlobalAction VisibleNameProfile() {
-        	new WebDriverWait(driver, 60).until(ExpectedConditions.visibilityOfElementLocated(VisibleNameProfile));
-            Report.reportLog(reflectiveClass, "Condition VisibleNameProfile isVisible finished", "INFO", 60, Status.PASS, true, "", "", null);
+	public LoginGlobalAction AsyncCondition5() {
+        	new WebDriverWait(driver, 60).until(ExpectedConditions.visibilityOfElementLocated(AsyncCondition5));
+            Report.reportLog(reflectiveClass, "Condition AsyncCondition5 isVisible finished", "INFO", 60, Status.PASS, true, "", "", null);
         	return this;
     }
 
@@ -92,22 +85,21 @@ public class LoginGlobalAction{
       
 	public LoginGlobalAction SingIn() throws Exception {
         	driver.findElement(UserName).clear();
-            driver.findElement(UserName).sendKeys("cadgitlab");
-            Report.reportLog(reflectiveClass, "Typed " + "cadgitlab in UserName", "INFO", 0, Status.PASS, true, "", "", null);	driver.findElement(Password).clear();
-            driver.findElement(Password).sendKeys("cadgitlab");
-            Report.reportLog(reflectiveClass, "Typed " + "cadgitlab in Password", "INFO", 0, Status.PASS, true, "", "", null);
+            driver.findElement(UserName).sendKeys(excelSheet.get("User:Login"));
+            Report.reportLog(reflectiveClass, "Typed " + excelSheet.get("User:Login") + " in UserName", "INFO", 0, Status.PASS, true, "", "", null);			driver.findElement(Password).clear();
+            driver.findElement(Password).sendKeys(excelSheet.get("Password:Login"));
+            Report.reportLog(reflectiveClass, "Typed " + excelSheet.get("Password:Login") + " in Password", "INFO", 0, Status.PASS, true, "", "", null);		
             new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(SingIn));
             Report.reportLog(reflectiveClass, "Condition SingIn isClickable finished", "ASYNCHRONOUS", 0);
             driver.findElement(SingIn).click();
-            Report.reportLog(reflectiveClass, "Clicked SingIn", "INFO", 1000, Status.PASS, true, "", "", null);
+            Report.reportLog(reflectiveClass, "Clicked SingIn", "INFO", 0, Status.PASS, true, "", "", null);
             return this;
       }
       
 	public LoginGlobalAction CheckProfile() {
-        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(Nameprofile));
-            Report.reportLog(reflectiveClass, "Condition Nameprofile isVisible finished", "ASYNCHRONOUS", 0);
-			assertTrue("cadgitlab".equals(driver.findElement(Nameprofile).getText()), "Field Nameprofile not found in assertion");
-        	Report.reportLog(reflectiveClass, "The field cadgitlab has been found on assertion", "INFO", 0, Status.PASS, true, "", "", null);
+        
+			assertTrue(excelSheet.get("User:Login").equals(driver.findElement(checkNameProfile).getText()), "Field checkNameProfile not found in assertion");
+        	Report.reportLog(reflectiveClass, "The field "+ excelSheet.get("User:Login") +" has been found on assertion", "INFO", 0, Status.PASS, true, "", "", null);
             
         
         Report.reportLog(reflectiveClass, "The field CheckProfile has been found on assertions", "INFO", 0, Status.PASS, false, "", "", null);
@@ -117,15 +109,11 @@ public class LoginGlobalAction{
     public void doLoginGlobalAction() throws Exception {
     
     
-		IndexCAD();
-    	Thread.sleep(1000);
-
-		IsClickSingIn();
-      
+		FrontEndNavigate();
+    
 		SingIn();
-    	Thread.sleep(1000);
-
-		VisibleNameProfile();
+    
+		AsyncCondition5();
       
 		CheckProfile();
     

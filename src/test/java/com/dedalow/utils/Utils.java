@@ -102,7 +102,7 @@ public class Utils {
                 }
             }   
 
-            
+            sheetList.put("CheckText:MultipleParameter", getTabs("CheckText:MultipleParameter", sheetList));
             fis.close();
             book.close();
         } catch (Exception e) { 
@@ -328,30 +328,48 @@ public class Utils {
 
     public static ArrayList<String> getTestCases(String option, ArrayList<String> testCases) throws Exception {
         switch (option) {
-            case "release5":
-            	testCases.add("com.dedalow.release5.Test_ForderGlobal");
+            case "release6":
+            	testCases.add("com.dedalow.release6.Test_PSFUEND02E0114");
 			
             break;
-			case "suiteBackend":
-            	testCases.add("com.dedalow.suiteBackend.Test_Backends");
+			case "release5":
+            	testCases.add("com.dedalow.release5.Test_PSFUEND02E0113");
+				testCases.add("com.dedalow.release5.Test_PSFUEND02E0112");
 			
             break;
-			case "regressionCAD":
-            	testCases.add("com.dedalow.regressionCAD.Test_Simple");
+			case "regressionCADActions":
+            	testCases.add("com.dedalow.regressionCADActions.Test_PSFUEND02E0108");
 			
             break;
 			case "regressionOtherActions":
-            	testCases.add("com.dedalow.regressionOtherActions.Test_ChangeDriver");
-				testCases.add("com.dedalow.regressionOtherActions.Test_UpdateFile");
+            	testCases.add("com.dedalow.regressionOtherActions.Test_PSFUEND02E0109");
+				testCases.add("com.dedalow.regressionOtherActions.Test_PSFUEND02E0111");
+				testCases.add("com.dedalow.regressionOtherActions.Test_PSFUEND02E0110");
+			
+            break;
+			case "regressionCAD":
+            	testCases.add("com.dedalow.regressionCAD.Test_PSFUEND02E0104");
+			
+            break;
+			case "regressionOther":
+            	testCases.add("com.dedalow.regressionOther.Test_PSFUEND02E0106");
+				testCases.add("com.dedalow.regressionOther.Test_PSFUEND02E0105");
+				testCases.add("com.dedalow.regressionOther.Test_PSFUEND02E0107");
 			
             break;
 			
             case "complete":
-                	testCases.add("com.dedalow.release5.Test_ForderGlobal");
-				testCases.add("com.dedalow.suiteBackend.Test_Backends");
-				testCases.add("com.dedalow.regressionCAD.Test_Simple");
-				testCases.add("com.dedalow.regressionOtherActions.Test_ChangeDriver");
-				testCases.add("com.dedalow.regressionOtherActions.Test_UpdateFile");
+                	testCases.add("com.dedalow.release6.Test_PSFUEND02E0114");
+				testCases.add("com.dedalow.release5.Test_PSFUEND02E0113");
+				testCases.add("com.dedalow.release5.Test_PSFUEND02E0112");
+				testCases.add("com.dedalow.regressionCADActions.Test_PSFUEND02E0108");
+				testCases.add("com.dedalow.regressionOtherActions.Test_PSFUEND02E0109");
+				testCases.add("com.dedalow.regressionOtherActions.Test_PSFUEND02E0111");
+				testCases.add("com.dedalow.regressionOtherActions.Test_PSFUEND02E0110");
+				testCases.add("com.dedalow.regressionCAD.Test_PSFUEND02E0104");
+				testCases.add("com.dedalow.regressionOther.Test_PSFUEND02E0106");
+				testCases.add("com.dedalow.regressionOther.Test_PSFUEND02E0105");
+				testCases.add("com.dedalow.regressionOther.Test_PSFUEND02E0107");
 			
                 break;
             default:
@@ -389,7 +407,10 @@ public class Utils {
         String caseName = (String) reflectiveClass.getField("caseName").get(reflectiveClass);
 
         Report.reportExcel(reflectiveClass);
-           
+        Report.reportTestlink(screenShot, suiteName, caseName);
+    } catch (NullPointerException | MalformedURLException e) {
+        Report.reportErrors("Can not stablish connection with Testlink server");
+        Report.reportErrors(e.getMessage());   
     } catch (Exception e) {
         Report.reportErrors(e.getMessage());
     }

@@ -26,6 +26,10 @@ public class put {
             + separator + "request" + separator + "put2.json";
 	private static String put3 = System.getProperty("user.dir") + separator + "resources"
             + separator + "request" + separator + "put3.json";
+	private static String put4 = System.getProperty("user.dir") + separator + "resources"
+            + separator + "request" + separator + "put4.json";
+	private static String put5 = System.getProperty("user.dir") + separator + "resources"
+            + separator + "request" + separator + "put5.json";
 	
     
     public Response putPUT() throws Exception {
@@ -80,6 +84,38 @@ public Response putPUT3() throws Exception {
         try{
 			String queryParam = "users/2";
 			jsonBody = Utils.generateJSONBody(put3); 
+            Response response = given()
+                .contentType(contentType)
+				.header("Accept-Charset", "UTF-8")
+				.body(jsonBody)
+                .when()
+                .put(URL + queryParam);
+            return response;
+        } catch (Exception e) {
+            String message = e.getMessage() != null ? e.getMessage() : "Found a bad request error to this url: " + URL;
+            throw new Exception (message);
+        }
+    }
+public Response putPUT4() throws Exception {
+        try{
+			String queryParam = "users/2";
+			jsonBody = Utils.generateJSONBody(put4); 
+            Response response = given()
+                .contentType(contentType)
+				.header("Accept-Charset", "UTF-8")
+				.body(jsonBody)
+                .when()
+                .put(URL + queryParam);
+            return response;
+        } catch (Exception e) {
+            String message = e.getMessage() != null ? e.getMessage() : "Found a bad request error to this url: " + URL;
+            throw new Exception (message);
+        }
+    }
+public Response putPUT5() throws Exception {
+        try{
+			String queryParam = "users/2";
+			jsonBody = Utils.generateJSONBody(put5); 
             Response response = given()
                 .contentType(contentType)
 				.header("Accept-Charset", "UTF-8")

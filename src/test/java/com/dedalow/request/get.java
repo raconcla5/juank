@@ -76,5 +76,33 @@ public Response getGET3() throws Exception {
             throw new Exception (message);
         }
     }
+public Response getGET4() throws Exception {
+        try{
+			String queryParam = "page/2";
+            Response response = given()
+                .contentType(contentType)
+				.header("Accept-Charset", "UTF-8")
+                .when()
+                .get(URL + queryParam);
+            return response;
+        } catch (Exception e) {
+            String message = e.getMessage() != null ? e.getMessage() : "Found a bad request error to this url: " + URL;
+            throw new Exception (message);
+        }
+    }
+public Response getGET5() throws Exception {
+        try{
+			String queryParam = "page/2";
+            Response response = given()
+                .contentType(contentType)
+				.header("Accept-Charset", "UTF-8")
+                .when()
+                .get(URL + queryParam);
+            return response;
+        } catch (Exception e) {
+            String message = e.getMessage() != null ? e.getMessage() : "Found a bad request error to this url: " + URL;
+            throw new Exception (message);
+        }
+    }
 
 }
